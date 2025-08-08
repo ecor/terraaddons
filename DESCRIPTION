@@ -1,0 +1,13 @@
+Package: terraaddons
+License: EUPL (>= 1.2)
+Title: Add-Ons for Spatially Gridded Coverages
+Type: Package
+Authors@R: c(person(given="Emanuele",family="Cordano",role = c("aut","cre"),email = "emanuele.cordano@gmail.com"))
+Description: Additional functions for operating on spatially griddede covareges Laplacian filter applied to  Terrain Elevation and processed through terra::filter.
+Version: 0.0.1
+Date: 2025-08-08
+Repository: CRANkg
+Depends: R(>= 3.5.0),terra
+Suggests: leaflet
+RoxygenNote: 7.3.2
+NeedsCompilation: no
