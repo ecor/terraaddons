@@ -8,6 +8,7 @@ Version: 0.0.1
 Date: 2025-08-08
 Repository: CRANkg
 Depends: R(>= 3.5.0),terra
+Imports: sf
 Suggests: leaflet
 RoxygenNote: 7.3.2
 NeedsCompilation: no

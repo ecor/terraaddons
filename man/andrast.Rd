@@ -4,7 +4,7 @@
 \alias{andrast}
 \title{INteresction (AND) of catagories in a multi-layer raster/rast object}
 \usage{
-andrast(x, nmax_cat = 100, name = "andrast", ...)
+andrast(x, nmax_cat = 100, name = "andrast", class_number = FALSE, ...)
 }
 \arguments{
 \item{x}{a SpatRast object}
@@ -12,6 +12,8 @@ andrast(x, nmax_cat = 100, name = "andrast", ...)
 \item{nmax_cat}{maximum number of catagories per layer}
 
 \item{name}{output raster name}
+
+\item{class_number}{logical}
 
 \item{...}{further arguments}
 }
@@ -42,7 +44,7 @@ laplacianb <- classify(laplacian,rcl=laplacian_rcl)
 x <- c(elevb,aspectb,laplacianb)
 
 out <- andrast(x)
-
+out <- andrast(x,class_number=TRUE)
 plet(out,col=rainbow(80),tiles="OpenTopoMap")
 
  ## TO DO 

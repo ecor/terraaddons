@@ -4,6 +4,7 @@ NULL
 #' @param x   a SpatRast object 
 #' @param nmax_cat maximum number of catagories per layer
 #' @param name output raster name
+#' @param class_number logical 
 #' @param ... further arguments
 #'
 #'
@@ -34,12 +35,12 @@ NULL
 #' x <- c(elevb,aspectb,laplacianb)
 #' 
 #' out <- andrast(x)
-#' 
+#' out <- andrast(x,class_number=TRUE)
 #' plet(out,col=rainbow(80),tiles="OpenTopoMap")
 #' 
 #'  ## TO DO 
 
-andrast <- function(x,nmax_cat=100,name="andrast",...) {
+andrast <- function(x,nmax_cat=100,name="andrast",class_number=FALSE,...) {
   
   ll <- terra::levels(x)
   if (is.null(ll)) stop("x must be factor (e.g. category raster)")
@@ -109,9 +110,19 @@ andrast <- function(x,nmax_cat=100,name="andrast",...) {
   
   llout <- llout[,c(names(llout)[1],"value")]
   
+  if (class_number) {
+    
+    llout$value <- as.character(llout[,1])
+    ## TO DO
+    
+  }
+  
+  
+  
   out <- as.factor(out)
   names(out) <- name
   levels(out) <- llout
+  
   
   
   ##out <- x 
